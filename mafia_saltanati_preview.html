@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#100b18"><title>مافیای سلطنتی</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+:root{--bg:#100b18;--panel:#1c1427;--panel2:#281d35;--gold:#e7bd70;--gold2:#a8793d;--txt:#f8f0e6;--muted:#b8a9c5;--line:#493552;--green:#8bd3a0;--red:#e58b8b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#52345d 0,#1b1225 40%,#0c0912 100%);color:var(--txt);font-family:Vazirmatn,Arial,sans-serif;min-height:100vh}
+.app{max-width:560px;margin:auto;padding:14px 13px 92px}header{display:flex;align-items:center;justify-content:space-between;margin:5px 1px 16px}.brand{display:flex;align-items:center;gap:10px}.crest{width:48px;height:48px;border:1px solid var(--gold);border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#54395b,#17101f);font-size:28px;box-shadow:0 0 22px #d2a34a22}h1{font-size:18px;color:var(--gold);margin:0}.sub{font-size:10px;color:var(--muted)}.tag{font-size:10px;color:var(--gold);border:1px solid var(--gold2);padding:6px 9px;border-radius:20px}
+.hero{border:1px solid #8d693e;border-radius:22px;padding:18px;background:linear-gradient(120deg,#3a2748,#17111f 65%,#412b3d);position:relative;overflow:hidden;box-shadow:0 14px 35px #0006}.hero:after{content:"♛";position:absolute;left:12px;top:-30px;font-size:150px;color:#e7bd7015}.hero h2{color:#f4d79d;margin:0 0 5px;font-size:21px}.hero p{font-size:11px;line-height:1.9;color:#d4c4d9;margin:0 0 13px;max-width:340px}.stats{display:flex;gap:7px;flex-wrap:wrap}.stat{font-size:10px;padding:6px 9px;border-radius:10px;background:#0c0915a8;border:1px solid #715438;color:#f2d69b}
+.section{display:flex;justify-content:space-between;align-items:center;margin:19px 2px 9px}.section h3{font-size:14px;margin:0}.section small{font-size:10px;color:var(--muted)}
+.card{background:linear-gradient(145deg,#291e38,#17111f);border:1px solid var(--line);border-radius:16px;padding:13px;margin-bottom:9px}.row{display:flex;align-items:center;gap:10px}.grow{flex:1}.ico{width:42px;height:42px;border-radius:12px;background:#3b2a48;display:grid;place-items:center;font-size:22px}.card b{font-size:12px}.muted{font-size:10px;color:var(--muted);line-height:1.8}.btn{border:0;border-radius:11px;padding:10px 13px;background:linear-gradient(135deg,#f3d58f,#b98242);color:#24172a;font:800 11px Vazirmatn;cursor:pointer}.btn.alt{background:#30243d;border:1px solid #665078;color:#ead9bc}.btn.danger{background:#63323a;color:#ffe6e6}.btn:disabled{opacity:.4;cursor:not-allowed}.full{width:100%;margin-top:8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.tile{background:#21182f;border:1px solid #493552;border-radius:15px;padding:12px}.tile .big{font-size:25px}.tile b{display:block;margin:4px 0}.page{display:none}.page.active{display:block}.nav{position:fixed;bottom:0;left:0;right:0;background:#100b18f2;border-top:1px solid #493552;z-index:5;backdrop-filter:blur(12px)}.navin{max-width:560px;margin:auto;display:flex;justify-content:space-around;padding:8px 3px calc(8px + env(safe-area-inset-bottom))}.nav button{border:0;background:none;color:#a99bb7;font:10px Vazirmatn;display:grid;justify-items:center;gap:2px;min-width:54px}.nav strong{font-size:19px}.nav button.active{color:var(--gold)}
+.profile{display:flex;align-items:center;gap:12px}.avatar{width:76px;height:76px;border:3px double var(--gold);border-radius:50%;overflow:hidden;display:grid;place-items:center;background:#1a1224;flex:0 0 auto;box-shadow:0 0 16px #e7bd7040}.avatar img{width:100%;height:100%;object-fit:cover;display:block}.face img{width:100%;height:100%;object-fit:cover;border-radius:50%}.badge{display:inline-block;color:var(--gold);border:1px solid var(--gold2);padding:3px 8px;border-radius:15px;font-size:9px;margin-top:4px}
+.items{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.item{text-align:center;padding:12px 4px;background:#21182f;border:1px solid #493552;border-radius:13px}.item .big{font-size:27px}.item b{display:block;font-size:10px;margin:5px 0}.item small{font-size:9px;color:var(--green)}
+.player{display:flex;align-items:center;gap:9px;padding:9px;background:#21182f;border:1px solid #45334f;border-radius:12px;margin:6px 0}.face{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:#44304e}.player .grow{font-size:11px}.status{font-size:9px;color:var(--muted)}.role{font-size:10px;color:var(--gold)}
+input[type=text]{width:100%;padding:11px;border-radius:10px;background:#100c18;border:1px solid #5a4265;color:white;font:12px Vazirmatn;margin:7px 0}
+.notice{font-size:10px;color:#c0b2ca;line-height:1.9;margin-top:10px}.adminrow{display:flex;align-items:center;justify-content:space-between;padding:11px;background:#21182f;border:1px solid #493552;border-radius:11px;margin:7px 0;font-size:11px}.adminrow input{accent-color:#dcb56c}
+.modal{display:none;position:fixed;inset:0;background:#05030bdc;z-index:10;align-items:flex-end;justify-content:center}.modal.show{display:flex}.sheet{width:min(560px,100%);background:#21182f;border:1px solid #80603e;border-radius:22px 22px 0 0;padding:18px 16px 28px}.sheet h3{color:var(--gold);margin:0 0 7px}.sheet p{font-size:11px;color:var(--muted);line-height:1.9}
+.timer{font-size:25px;color:var(--gold);font-weight:800;text-align:center;padding:8px}.hidden{display:none!important}
+</style></head>
+<body>
+<div id="loginGate" style="position:fixed;inset:0;z-index:30;background:radial-gradient(ellipse at top,#523451,#17101f 60%,#0b0810);display:grid;place-items:center;padding:22px">
+ <div style="width:min(420px,100%);background:#21182f;border:1px solid #9a7545;border-radius:24px;padding:22px;text-align:center;box-shadow:0 20px 55px #0009">
+  <div style="font-size:54px;color:#e7bd70">♛</div><h2 style="color:#f0ce88;margin:6px 0">ورود به مافیای سلطنتی</h2>
+  <p style="font-size:11px;color:#c8b9d0;line-height:2">شماره تلفن و نام نمایشی خود را وارد کن. این نسخه ورود محلی دارد و کد پیامکی ارسال نمی‌کند.</p>
+  <input id="phoneInput" type="tel" inputmode="tel" placeholder="شماره تلفن" style="width:100%;padding:13px;border-radius:10px;background:#100c18;border:1px solid #5a4265;color:white;font:13px Vazirmatn;margin:8px 0">
+  <input id="nameInput" type="text" placeholder="نام نمایشی" value="آرش" style="width:100%;padding:13px;border-radius:10px;background:#100c18;border:1px solid #5a4265;color:white;font:13px Vazirmatn;margin:8px 0">
+  <button class="btn full" onclick="localLogin()">ورود به بازی</button>
+  <div style="font-size:10px;color:#ad9db8;line-height:1.8;margin-top:12px">شماره فقط روی همین دستگاه ذخیره می‌شود. برای ورود امن واقعی، تأیید پیامکی و سرور لازم است.</div>
+ </div>
+</div>
+<div class="app">
+<header><div class="brand"><div class="crest">♛</div><div><h1>مافیای سلطنتی</h1><div class="sub">قلمرو شب؛ نبرد هوش و استدلال</div></div></div><span class="tag">نسخه قابل بازی آفلاین</span></header>
+<main>
+<section id="home" class="page active">
+<div class="hero"><h2>به قلمرو خوش آمدی</h2><p>اتاق بساز، نقش خودت را بشناس و در یک دور آزمایشی با بازیکنان هوش مصنوعی بازی کن.</p><div class="stats"><span class="stat">♛ مالک: آرش</span><span class="stat">◆ سکه ادمین: ∞</span><span class="stat">💎 الماس: ∞</span></div></div>
+<div class="section"><h3>شروع بازی</h3><small>حالت آزمایشی روی همین دستگاه</small></div>
+<div class="card row"><div class="ico">🎭</div><div class="grow"><b>بازی سریع با بازیکنان هوش مصنوعی</b><div class="muted">۱۰ بازیکن · نقش‌های مخفی · شب و روز · رأی‌گیری</div></div><button class="btn" onclick="startGame()">شروع</button></div>
+<div class="card row"><div class="ico">🔒</div><div class="grow"><b>اتاق خصوصی آنلاین</b><div class="muted">در نسخه سروری آینده فعال می‌شود</div></div><button class="btn alt" onclick="notice('اتاق آنلاین هنوز به سرور متصل نشده است.')">به‌زودی</button></div>
+<div class="card"><b>ساخت اتاق تمرینی</b><div class="muted">کد اتاق نمایشی برای تمرین روی همین دستگاه؛ بازیکن واقعی از دستگاه دیگر متصل نمی‌شود.</div><button class="btn alt full" onclick="makeLocalRoom()">ساخت کد اتاق</button><div id="roomCode" class="timer"></div></div>
+<div class="grid"><div class="tile"><div class="big">🎙️</div><b>چت صوتی</b><div class="muted">نیازمند سرور صوتی آنلاین</div></div><div class="tile"><div class="big">🛡️</div><b>نقش‌های متنوع</b><div class="muted">مافیا، دکتر، کارآگاه و شهروند</div></div></div>
+</section>
+<section id="game" class="page">
+<div class="section"><h3 id="phaseTitle">بازی در جریان</h3><small id="round">روز اول</small></div>
+<div class="hero"><h2 id="phaseHeadline">شب فرا رسیده است</h2><p id="phaseDesc">نقش خودت را بررسی کن و انتخابت را انجام بده.</p><div class="stats"><span class="stat" id="myRole">نقش: مخفی</span><span class="stat" id="aliveCount">۱۰ بازیکن زنده</span></div></div>
+<div class="section"><h3>بازیکنان</h3><small>برای رأی دادن انتخاب کن</small></div><div id="players"></div>
+<div id="nightAction" class="card hidden"><b>اقدام شبانه</b><div class="muted" id="actionHint">انتخاب هدف</div><div id="nightTargets"></div></div>
+<div id="voteAction" class="card hidden"><b>رأی‌گیری روز</b><div class="muted">یک بازیکن را برای خروج انتخاب کن.</div><div id="voteTargets"></div></div>
+<button id="advance" class="btn full" onclick="advancePhase()">ادامه مرحله</button><button class="btn alt full" onclick="showPage('home')">خروج از بازی</button>
+</section>
+<section id="profile" class="page">
+<div class="section"><h3>پروفایل مالک</h3><small>حساب اصلی</small></div>
+<div class="card profile"><div class="avatar"><img src="assets/owner-avatar.jpg" alt="آواتار اختصاصی مالک"></div><div><b>آرش</b><div class="badge">♛ VIP سلطنتی · ادمین اصلی / مالک بازی</div><div class="muted">شناسه مالک: OWNER-0001</div><div class="muted" id="profilePhone">شماره ثبت‌شده: —</div></div></div>
+<div class="grid"><div class="tile"><div class="big">🪙</div><b>سکه نامحدود</b><div class="muted">ویژه مالک</div></div><div class="tile"><div class="big">💎</div><b>الماس نامحدود</b><div class="muted">ویژه مالک</div></div></div>
+<div class="section"><h3>آیتم‌های فعال</h3></div><div class="items"><div class="item"><div class="big">👑</div><b>تاج پادشاهی</b><small>فعال</small></div><div class="item"><div class="big">✨</div><b>فریم سلطنتی</b><small>فعال</small></div><div class="item"><div class="big">🦅</div><b>آواتار ویژه</b><small>فعال</small></div></div>
+</section>
+<section id="shop" class="page">
+<div class="section"><h3>گنجینه سلطنتی</h3><small>همه آیتم‌ها برای مالک باز هستند</small></div><div class="items" id="shopItems"></div>
+<p class="notice">این اقلام در پیش‌نمایش برای حساب مالک آزاد هستند؛ ذخیره و همگام‌سازی حساب در نسخه متصل به سرور انجام می‌شود.</p>
+</section>
+<section id="admin" class="page">
+<div class="section"><h3>اتاق فرمان مالک</h3><small>سطح دسترسی کامل</small></div>
+<div class="hero"><h2>پنل مدیریت سلطنتی</h2><p>حساب آرش به‌عنوان مالک اصلی تعریف شده است. گزینه‌های این صفحه تنظیمات نمایشی نسخه محلی‌اند.</p><div class="stats"><span class="stat">دسترسی مالک: کامل</span><span class="stat">موجودی: نامحدود</span></div></div>
+<div id="adminOptions"></div><button class="btn full" onclick="notice('در نسخه آنلاین، ابزارهای مدیریتی از طریق سرور امن اجرا خواهند شد.')">ذخیره تنظیمات محلی</button>
+<p class="notice">مجوزهای واقعی باید سمت سرور بررسی شوند؛ این نسخه محلی به‌تنهایی سامانه مدیریت آنلاین یا احراز هویت نیست.</p>
+</section>
+</main></div>
+<nav class="nav"><div class="navin">
+<button class="active" onclick="showPage('home',this)"><strong>⌂</strong>خانه</button><button onclick="showPage('game',this)"><strong>⚔</strong>بازی</button><button onclick="showPage('profile',this)"><strong>♙</strong>پروفایل</button><button onclick="showPage('shop',this)"><strong>♛</strong>فروشگاه</button><button onclick="showPage('admin',this)"><strong>⚙</strong>مدیریت</button>
+</div></nav>
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="sheet"><h3 id="modalTitle">پیام</h3><p id="modalText"></p><button class="btn full" onclick="closeModal()">باشه</button></div></div>
+<script>
+const $=id=>document.getElementById(id);
+function localLogin(){
+ const phone=($('phoneInput').value||'').replace(/[^0-9+]/g,'');
+ const nick=($('nameInput').value||'آرش').trim();
+ if(phone.length<8){notice('شماره تلفن را کامل وارد کن.');return}
+ if(!nick){notice('یک نام نمایشی وارد کن.');return}
+ const profile={phone,nick};localStorage.setItem('mafiaRoyalProfile',JSON.stringify(profile));
+ $('loginGate').style.display='none';$('profilePhone').textContent='شماره ثبت‌شده: '+phone;
+}
+(function restoreLogin(){try{const p=JSON.parse(localStorage.getItem('mafiaRoyalProfile')||'null');if(p&&p.phone){$('loginGate').style.display='none';$('phoneInput').value=p.phone;$('nameInput').value=p.nick||'آرش';$('profilePhone').textContent='شماره ثبت‌شده: '+p.phone}}catch(e){}})();
+
+function showPage(id,btn){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');else{let b=[...document.querySelectorAll('.nav button')].find(x=>x.textContent.includes(id==='home'?'خانه':id==='game'?'بازی':id==='profile'?'پروفایل':id==='shop'?'فروشگاه':'مدیریت'));if(b)b.classList.add('active')}window.scrollTo(0,0)}
+function makeLocalRoom(){const code=String(Math.floor(100000+Math.random()*900000));$('roomCode').textContent='کد تمرینی: '+code;notice('کد اتاق محلی ساخته شد. این کد هنوز امکان اتصال بازیکنان از اینترنت را ندارد.')}
+function notice(t){$('modalTitle').textContent='مافیای سلطنتی';$('modalText').textContent=t;$('modal').classList.add('show')}function closeModal(){$('modal').classList.remove('show')}
+const cosmetics=[['👑','تاج طلایی'],['💠','تاج کریستالی'],['🔥','تاج آتشین'],['🌌','فریم کهکشانی'],['⚜️','فریم سلطنتی'],['🌹','فریم رز سرخ'],['🦁','آواتار شیر'],['🦅','آواتار عقاب'],['🎩','آواتار اشرافی']];
+$('shopItems').innerHTML=cosmetics.map(x=>`<div class="item"><div class="big">${x[0]}</div><b>${x[1]}</b><small>باز برای مالک</small></div>`).join('');
+const adminLabels=['تمام تاج‌ها و فریم‌ها باز باشند','سکه و الماس نامحدود','مدیریت اتاق‌ها','مدیریت بازیکنان','اعلان همگانی','فعال بودن آواتارهای ویژه'];
+$('adminOptions').innerHTML=adminLabels.map(x=>`<div class="adminrow"><span>${x}</span><input type="checkbox" checked></div>`).join('');
+let people=[],phase='night',day=1,myRole='',selected=-1,ended=false;
+const names=['آرش','آرمان','رها','پارسا','نیلوفر','سامان','هلیا','بردیا','آوا','کیان'];
+function startGame(){
+ const roles=['مافیا','مافیا','دکتر','کارآگاه','شهروند','شهروند','شهروند','شهروند','شهروند','شهروند'];
+ for(let i=roles.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[roles[i],roles[j]]=[roles[j],roles[i]]}
+ people=names.map((n,i)=>({name:n,role:roles[i],alive:true,me:i===0}));
+ myRole=people[0].role;phase='night';day=1;ended=false;selected=-1;renderGame();showPage('game');
+}
+function renderGame(){
+ $('round').textContent=(phase==='night'?'شب ':'روز ')+day;
+ $('phaseTitle').textContent=phase==='night'?'مرحله شب':'مرحله روز';
+ $('phaseHeadline').textContent=phase==='night'?'شب فرا رسیده است':'روز آغاز شد';
+ $('phaseDesc').textContent=phase==='night'?'نقش مخفی تو مشخص شده؛ انتخابت را با دقت انجام بده.':'گفت‌وگو و رأی‌گیری؛ به بازیکنی که مشکوک هستی رأی بده.';
+ $('myRole').textContent='نقش تو: '+myRole;$('aliveCount').textContent=people.filter(p=>p.alive).length+' بازیکن زنده';
+ $('players').innerHTML=people.map((p,i)=>`<div class="player"><div class="face">${p.me?'<img src="assets/owner-avatar.jpg" alt="آواتار آرش">':'🎭'}</div><div class="grow"><b>${p.name}${p.me?' (تو)':''}</b><div class="status">${p.alive?'در بازی':'از بازی خارج شده'}</div></div><span class="role">${p.me?myRole:(p.alive?'نقش مخفی':'—')}</span></div>`).join('');
+ $('nightAction').classList.toggle('hidden',phase!=='night');$('voteAction').classList.toggle('hidden',phase!=='day');
+ if(phase==='night'){
+ let eligible=people.map((p,i)=>({p,i})).filter(x=>x.p.alive&&!x.p.me);
+ $('actionHint').textContent=myRole==='مافیا'?'هدف شب را انتخاب کن (شبیه‌سازی محلی).':myRole==='دکتر'?'بازیکنی را برای محافظت انتخاب کن.':myRole==='کارآگاه'?'بازیکنی را برای بررسی انتخاب کن.':'این شب نقش ویژه‌ای نداری؛ مرحله را ادامه بده.';
+ $('nightTargets').innerHTML=myRole==='مافیا'||myRole==='دکتر'||myRole==='کارآگاه'?eligible.map(x=>`<button class="btn alt" style="margin:4px" onclick="selected=${x.i};notice('انتخاب شد: ${x.p.name}')">${x.p.name}</button>`).join(''):'<div class="muted">منتظر پایان شب بمان.</div>';
+ }else{
+ $('voteTargets').innerHTML=people.map((p,i)=>p.alive&&!p.me?`<button class="btn alt" style="margin:4px" onclick="vote(${i})">${p.name}</button>`:'').join('');
+ }
+ $('advance').textContent=phase==='night'?'پایان شب و شروع روز':'پایان رأی‌گیری و شروع شب';
+}
+function vote(i){if(ended)return;people[i].alive=false;notice(people[i].name+' از بازی خارج شد. نقش او: '+people[i].role);checkEnd();renderGame()}
+function advancePhase(){
+ if(ended)return;
+ if(phase==='night'){
+ if(myRole==='مافیا'&&selected>=0&&people[selected].alive)people[selected].alive=false;
+ else if(myRole==='مافیا'&&selected<0){let candidates=people.map((p,i)=>({p,i})).filter(x=>x.p.alive&&!x.p.me&&x.p.role!=='مافیا');if(candidates.length)people[candidates[Math.floor(Math.random()*candidates.length)].i].alive=false}
+ phase='day';selected=-1;
+ }else{phase='night';day++;selected=-1}
+ checkEnd();renderGame();
+}
+function checkEnd(){let maf=people.filter(p=>p.alive&&p.role==='مافیا').length,city=people.filter(p=>p.alive&&p.role!=='مافیا').length;if(maf===0||maf>=city){ended=true;setTimeout(()=>notice(maf===0?'شهروندان پیروز شدند!':'مافیا پیروز شد! برای شروع دوباره به خانه برگرد.'),80)}}
+</script></body></html>

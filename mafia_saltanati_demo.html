@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#100d1b">
+<title>مافیای سلطنتی</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+:root{--bg:#100d1b;--panel:#1b1629;--panel2:#241d35;--gold:#e8bd69;--gold2:#9e7134;--text:#f7f0e5;--muted:#b6a9c6;--line:#443452;--purple:#8f68c8}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#48305d 0,#171122 42%,#0c0a13 100%);color:var(--text);font-family:Vazirmatn,Arial,sans-serif;min-height:100vh}
+.app{max-width:520px;margin:auto;min-height:100vh;padding:16px 14px 92px}
+header{display:flex;justify-content:space-between;align-items:center;margin:4px 0 16px}
+.brand{display:flex;align-items:center;gap:10px}.crest{width:48px;height:48px;border:1px solid var(--gold);border-radius:15px;background:linear-gradient(145deg,#493354,#17101e);display:grid;place-items:center;font-size:27px;box-shadow:0 0 22px #c18b4033}
+h1{font-size:19px;margin:0;color:var(--gold);letter-spacing:.2px}.sub{font-size:11px;color:var(--muted)}
+.pill{border:1px solid #a77c3d;border-radius:30px;padding:7px 10px;color:var(--gold);font-size:11px;background:#2a2032}
+.hero{position:relative;overflow:hidden;border:1px solid #8f693d;border-radius:23px;padding:19px 17px;background:linear-gradient(120deg,#30213e,#171321 62%,#3a2638);box-shadow:0 15px 35px #0006}
+.hero:after{content:"♛";position:absolute;left:12px;top:-20px;font-size:145px;color:#e8bd6915;transform:rotate(-12deg)}
+.hero h2{font-size:22px;margin:0 0 5px;color:#f5d99c}.hero p{font-size:12px;color:#d0c2d7;margin:0 0 16px;max-width:290px;line-height:1.9}
+.stats{display:flex;gap:8px}.stat{background:#0e0b17aa;border:1px solid #6d533c;border-radius:12px;padding:7px 11px;font-size:11px;color:#f1d69c}
+.section{display:flex;align-items:center;justify-content:space-between;margin:20px 2px 10px}.section h3{font-size:15px;margin:0}.section small{color:var(--muted);font-size:10px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{background:linear-gradient(145deg,#261e36,#171321);border:1px solid var(--line);border-radius:17px;padding:13px;min-height:118px}
+.card .emoji{font-size:25px}.card b{display:block;font-size:13px;margin:7px 0 2px}.card span{font-size:10px;color:var(--muted)}
+.btn{border:0;border-radius:12px;padding:11px 14px;font:700 12px Vazirmatn;cursor:pointer;color:#24172b;background:linear-gradient(135deg,#f4d58d,#b9823f);box-shadow:0 5px 16px #c28b3d25}
+.btn.secondary{background:#302640;color:#e9d8b8;border:1px solid #655078;box-shadow:none}.btn.full{width:100%;margin-top:11px}
+.room{display:flex;align-items:center;gap:11px;background:#1d172b;border:1px solid #40304f;border-radius:14px;padding:11px;margin-bottom:8px}
+.roomicon{width:43px;height:43px;border-radius:12px;background:#342640;display:grid;place-items:center;font-size:22px}
+.roominfo{flex:1}.roominfo b{font-size:12px}.roominfo small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#100d1bf2;border-top:1px solid #493752;display:flex;justify-content:center;z-index:5;backdrop-filter:blur(12px)}
+.navinner{width:min(520px,100%);display:flex;justify-content:space-around;padding:9px 4px calc(9px + env(safe-area-inset-bottom))}
+.nav button{background:none;border:0;color:#a99bb8;font:11px Vazirmatn;display:grid;gap:3px;justify-items:center;min-width:55px}.nav button strong{font-size:19px}.nav button.active{color:var(--gold)}
+.page{display:none}.page.active{display:block}
+.profile{display:flex;gap:13px;align-items:center;padding:15px;background:#21192f;border:1px solid #6f533b;border-radius:18px}
+.avatar{width:68px;height:68px;border:3px double var(--gold);border-radius:50%;display:grid;place-items:center;font-size:35px;background:radial-gradient(circle,#60466c,#1b1426)}
+.admin{font-size:10px;color:#f0d18b;border:1px solid #8b693c;padding:4px 8px;border-radius:20px;display:inline-block;margin-top:5px}
+.itemgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.item{background:#21192f;border:1px solid #493753;border-radius:14px;text-align:center;padding:13px 5px}.item .big{font-size:28px}.item b{font-size:11px;display:block;margin-top:5px}.item small{color:#a9d6a7;font-size:9px}
+.adminrow{display:flex;justify-content:space-between;align-items:center;background:#21192f;border:1px solid #493753;padding:12px;border-radius:12px;margin:8px 0;font-size:12px}
+.switch{accent-color:#d8ad60;width:18px;height:18px}
+.notice{font-size:10px;color:#bcaec9;line-height:1.8;margin-top:12px}
+.modal{display:none;position:fixed;inset:0;background:#05030bd9;z-index:10;align-items:end;justify-content:center}.modal.show{display:flex}.sheet{width:min(520px,100%);background:#21192f;border:1px solid #80603e;border-radius:22px 22px 0 0;padding:20px 17px 28px}.sheet h3{margin:0 0 8px;color:var(--gold)}.sheet p{font-size:12px;color:var(--muted);line-height:1.9}
+input{width:100%;padding:12px;border-radius:10px;background:#120e1c;border:1px solid #5c4569;color:white;font:13px Vazirmatn;margin:8px 0}
+@media(min-width:520px){.app{padding-top:24px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="crest">♛</div><div><h1>مافیای سلطنتی</h1><div class="sub">قلمرو شب؛ جایی برای ذهن‌های برتر</div></div></div><div class="pill">نسخه نمایشی</div></header>
+<main>
+<section id="home" class="page active">
+<div class="hero"><h2>به قلمرو خوش آمدی</h2><p>اتاقت را انتخاب کن، نقش خودت را بشناس و در نبرد هوش و استدلال پیروز شو.</p><div class="stats"><div class="stat">♛ مالک بازی</div><div class="stat">◆ ∞ سکه ادمین</div></div></div>
+<div class="section"><h3>شروع بازی</h3><small>اتاق‌های در دسترس</small></div>
+<div class="room"><div class="roomicon">🎭</div><div class="roominfo"><b>اتاق کلاسیک</b><small>بازی استاندارد · ۸ تا ۱۲ نفر</small></div><button class="btn" onclick="openModal('اتاق کلاسیک')">ورود</button></div>
+<div class="room"><div class="roomicon">👑</div><div class="roominfo"><b>اتاق سلطنتی</b><small>قوانین ویژه · ۱۰ تا ۱۵ نفر</small></div><button class="btn" onclick="openModal('اتاق سلطنتی')">ورود</button></div>
+<div class="room"><div class="roomicon">🔒</div><div class="roominfo"><b>اتاق خصوصی</b><small>ساخت اتاق با رمز اختصاصی</small></div><button class="btn secondary" onclick="openModal('ساخت اتاق خصوصی')">ساخت</button></div>
+<div class="section"><h3>ویژگی‌های قلمرو</h3><small>همه برای مالک باز هستند</small></div>
+<div class="cards"><div class="card"><div class="emoji">🎙️</div><b>گفت‌وگوی صوتی</b><span>زیرساخت صوت زنده در نسخه آنلاین</span></div><div class="card"><div class="emoji">🛡️</div><b>نقش‌های ویژه</b><span>مافیا، دکتر، کارآگاه و بیشتر</span></div></div>
+</section>
+<section id="profile" class="page">
+<div class="section"><h3>پروفایل مالک</h3><small>حساب اصلی</small></div>
+<div class="profile"><div class="avatar">👑</div><div><b>آرش</b><div class="admin">♛ ادمین اصلی / مالک بازی</div><div class="sub">شناسه: OWNER-0001</div></div></div>
+<div class="section"><h3>موجودی حساب</h3></div><div class="cards"><div class="card"><div class="emoji">🪙</div><b>سکه: نامحدود</b><span>ویژه حساب مالک</span></div><div class="card"><div class="emoji">💎</div><b>الماس: نامحدود</b><span>ویژه حساب مالک</span></div></div>
+<div class="section"><h3>آیتم‌های مجهز شده</h3></div><div class="itemgrid"><div class="item"><div class="big">👑</div><b>تاج پادشاهی</b><small>فعال</small></div><div class="item"><div class="big">✨</div><b>فریم سلطنتی</b><small>فعال</small></div><div class="item"><div class="big">🦅</div><b>آواتار ویژه</b><small>فعال</small></div></div>
+</section>
+<section id="shop" class="page">
+<div class="section"><h3>گنجینه سلطنتی</h3><small>دسترسی کامل مالک</small></div>
+<div class="itemgrid">
+<div class="item"><div class="big">👑</div><b>تاج طلایی</b><small>باز برای مالک</small></div><div class="item"><div class="big">💠</div><b>تاج کریستالی</b><small>باز برای مالک</small></div><div class="item"><div class="big">🔥</div><b>تاج آتشین</b><small>باز برای مالک</small></div>
+<div class="item"><div class="big">🌌</div><b>فریم کهکشانی</b><small>باز برای مالک</small></div><div class="item"><div class="big">⚜️</div><b>فریم سلطنتی</b><small>باز برای مالک</small></div><div class="item"><div class="big">🦁</div><b>آواتار شیر</b><small>باز برای مالک</small></div>
+</div><p class="notice">در نسخه نمایشی، آیتم‌ها به‌صورت نمونه نمایش داده می‌شوند. فروشگاه واقعی و ذخیره دائمی آیتم‌ها در مرحله اتصال به سرور پیاده‌سازی می‌شود.</p>
+</section>
+<section id="admin" class="page">
+<div class="section"><h3>اتاق فرمان مالک</h3><small>سطح دسترسی: کامل</small></div>
+<div class="hero"><h2>پنل مدیریت سلطنتی</h2><p>این بخش نمونه رابط مدیریتی حساب مالک است. تغییرات در این پیش‌نمایش محلی هستند.</p><div class="stats"><div class="stat">دسترسی: کامل</div><div class="stat">حساب: مالک</div></div></div>
+<div class="adminrow"><span>باز بودن همه آیتم‌های فروشگاه</span><input class="switch" type="checkbox" checked></div>
+<div class="adminrow"><span>دسترسی نامحدود سکه و الماس</span><input class="switch" type="checkbox" checked></div>
+<div class="adminrow"><span>فعال بودن تاج و فریم اختصاصی</span><input class="switch" type="checkbox" checked></div>
+<div class="adminrow"><span>مدیریت اتاق‌ها</span><input class="switch" type="checkbox" checked></div>
+<div class="adminrow"><span>ابزار مدیریت بازیکنان</span><input class="switch" type="checkbox" checked></div>
+<div class="adminrow"><span>اعلان همگانی</span><input class="switch" type="checkbox" checked></div>
+<button class="btn full" onclick="openModal('ابزار مدیریت')">باز کردن ابزارهای مدیریت</button>
+<p class="notice">امنیت حساب مالک باید در سرور با احراز هویت و مجوزهای سمت سرور محافظت شود؛ تیک‌های این پیش‌نمایش به‌تنهایی مجوز واقعی ایجاد نمی‌کنند.</p>
+</section>
+</main>
+</div>
+<nav class="nav"><div class="navinner">
+<button class="active" onclick="showPage('home',this)"><strong>⌂</strong>خانه</button>
+<button onclick="showPage('profile',this)"><strong>♙</strong>پروفایل</button>
+<button onclick="showPage('shop',this)"><strong>♛</strong>فروشگاه</button>
+<button onclick="showPage('admin',this)"><strong>⚙</strong>مدیریت</button>
+</div></nav>
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="sheet"><h3 id="modalTitle">ورود به اتاق</h3><p id="modalText">این بخش در پیش‌نمایش نمایشی است. برای بازی چندنفره واقعی باید سرور، حساب کاربری و ارتباط صوتی پیاده‌سازی شود.</p><input id="roomName" placeholder="نام یا رمز اتاق (اختیاری)"><button class="btn full" onclick="closeModal()">متوجه شدم</button><button class="btn secondary full" onclick="closeModal()">بستن</button></div></div>
+<script>
+function showPage(id,btn){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');window.scrollTo(0,0)}
+function openModal(title){document.getElementById('modalTitle').textContent=title;document.getElementById('modal').classList.add('show')}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+</script>
+</body></html>

@@ -1,0 +1,8 @@
+نام برنامه: مافیای سلطنتی
+شناسه اندروید: ir.mafia.saltanati
+نسخه: 1.2.0
+نوع: بازی آفلاین محلی
+فناوری رابط بازی: HTML/CSS/JavaScript داخل Android WebView
+فایل شروع رابط: app/src/main/assets/index.html
+کلاس شروع اندروید: app/src/main/java/ir/mafia/saltanati/MainActivity.java
+گردش‌کار ساخت خودکار: .github/workflows/android.yml
